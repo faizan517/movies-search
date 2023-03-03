@@ -3,27 +3,6 @@
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-/* .container{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.col-10{
-    height: 8%;
-    width: 35%;
-    border-radius: 10vmax;
-    border-style: none;
-    background-color: #CBF1F5;
-    padding-left: 10px;
-}
-.mt-2{
-    height: 6%;
-    border-radius: 100vmin;
-    border-style: none;
-} */
 .movieContainer{
     height: 320px;
     width: 190px;
@@ -34,10 +13,9 @@
 }
 .movie{
     width: 100%;
-    /* background-color: darkkhaki; */
 }
 .moviePoster{
-    height: 100%;
+    height: 230px;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -66,7 +44,7 @@
     color: white;
     border-radius: 100px;
     position: absolute;
-     margin-top: 220px;
+    margin-top: 215px;
     margin-left: 115px;
     display: flex;
     justify-content: center;
