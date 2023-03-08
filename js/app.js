@@ -18,7 +18,7 @@ const main = document.getElementById("main");
 function showMoives(data) {
   main.innerHTML=''
   data.forEach((movies) => {
-    const { name, title, poster_path, vote_average } = movies;
+    const { name, title, poster_path, vote_average,overview } = movies;
     //movieContainer
     const movieConatiner = document.createElement("div");
     movieConatiner.setAttribute("class", "movieContainer ");
@@ -28,7 +28,7 @@ function showMoives(data) {
     moviePoster.setAttribute("class", "movie");
     var poster = document.createElement("div");
     poster.innerHTML = `<img src="${
-      img_url + poster_path
+      poster_path == null ? 'assets/pngwing.com.png' : img_url + poster_path 
     }" class="moviePoster">`;
     moviePoster.appendChild(poster);
     movieConatiner.appendChild(moviePoster);
@@ -44,6 +44,11 @@ function showMoives(data) {
     rating.innerHTML = `<p>${parseFloat(vote_average).toFixed(1)}</p>`;
     movieConatiner.appendChild(rating);
 
+    const description = document.createElement('div')
+    description.setAttribute('class','overview')
+    description.innerHTML =`<p >${ String(overview).slice(0,190)}</p>`
+    movieConatiner.appendChild(description)
+
     main.append(movieConatiner);
   });
 }
@@ -54,7 +59,6 @@ const search = document.getElementById('search')
 form.addEventListener('submit',(e)=>{
   e.preventDefault()
   const searchValue = search.value
-  // console.log("🚀 ~ file: app.js:57 ~ form.addEventListener ~ searchValue:", searchValue)
   if (searchValue) {
     movieApi(searchUrl+'&query='+searchValue)
   }else{
